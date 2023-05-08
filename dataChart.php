@@ -69,19 +69,19 @@
       <form id="wf-form-icd-from" method="POST" action="">
         <label for="gender-select">性別:</label>
         <select name="gender" id="gender-select" class="w-select">
-        <option value="ALL">請選擇性別</option>
+          <option value="ALL">請選擇性別</option>
           <option value="M">男性</option>
           <option value="F">女性</option>
           <option value="ALL">不分性別</option>
         </select>
         <label for="age-select">年齡層:</label>
         <select name="age" id="age-select" class="w-select">
-        <option value="0-100">請選擇年齡階段</option>
+          <option value="0-100">請選擇年齡階段</option>
           <option value="0-12">兒童(0-12歲)</option>
-          <option value="13-18">青年(13-24歲)</option>
-          <option value="19-30">壯年(25-44歲)</option>
-          <option value="31-50">中年(45-64歲)</option>
-          <option value="51-65">老年(65-100歲)</option>
+          <option value="13-24">青年(13-24歲)</option>
+          <option value="25-44">壯年(25-44歲)</option>
+          <option value="45-64">中年(45-64歲)</option>
+          <option value="65-100">老年(65-100歲)</option>
           <option value="0-100">不分年齡</option>
         </select>
 
@@ -104,10 +104,10 @@
             // 定義數字範圍
             $age_ranges = [
               '0-12' => [0, 12],
-              '13-18' => [13, 18],
-              '19-30' => [19, 30],
-              '31-50' => [31, 50],
-              '51-65' => [51, 65],
+              '13-24' => [13, 24],
+              '25-44' => [25, 44],
+              '45-64' => [45, 64],
+              '65-100' => [65, 100],
               '0-100' => [0, 100],
             ];
 
@@ -210,6 +210,12 @@
                 ),
               ),
             );
+            $gender_title = ($gender == 'ALL') ? '全部' : ($gender == 'M' ? '男性' : '女性');
+            $age_title = ($age == '0-100') ? '全部年齡' : ($age . '歲');
+            echo "<br>";
+            echo "<h2>以下為{$gender_title} {$age_title}的分析內容</h2>";
+            echo "<br>";
+
 
             // 關閉資料庫連線
             $conn->close();
@@ -226,10 +232,12 @@
 
         <!-- 顯示圖表的區域 -->
         <div style="width: 100%; overflow: hidden;">
-          <div style="width: 50%; float: left;">
+          <div style="width: 50%; float: left; text-align: center;">
+            <h3>前10大共病性</h3>
             <canvas id="icd-chart" style="width: 100%; height: 300px;"></canvas>
           </div>
-          <div style="width: 50%; float: left;">
+          <div style="width: 50%; float: left; text-align: center;">
+            <h3>ICD10類別比例</h3>
             <canvas id="class-chart" style="width: 100%; height: 300px;"></canvas>
           </div>
         </div>
@@ -237,7 +245,6 @@
         <script>
           var icdCtx = document.getElementById('icd-chart').getContext('2d');
           var classCtx = document.getElementById('class-chart').getContext('2d');
-
 
           var icdChart = new Chart(icdCtx, {
             type: 'bar',
@@ -259,9 +266,7 @@
                 }]
               },
               title: {
-                display: true,
-                text: 'ICD10直方圖',
-                fontSize: 20
+                display: false
               },
               legend: {
                 display: true,
@@ -275,9 +280,7 @@
             data: <?php echo isset($data) ? json_encode($data) : '[]'; ?>,
             options: {
               title: {
-                display: true,
-                text: 'ICD10圓餅圖',
-                fontSize: 20
+                display: false
               },
               legend: {
                 display: true,
@@ -287,6 +290,9 @@
           });
 
         </script>
+
+
+
       </div>
 
     </div>
