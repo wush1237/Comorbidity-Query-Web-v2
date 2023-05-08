@@ -45,7 +45,7 @@
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6">
-          <h1>趨勢圖</h1>
+          <h1>病歷數據分析-趨勢圖</h1>
           <div class="horizontal-bar beige"></div>
           <div class="subheading">根據百萬筆資料，統計分析之疾病趨勢圖</div>
         </div>
@@ -55,28 +55,18 @@
   </div>
   <div class="section wf-section">
     <div class="container-3 w-container">
-      <div class="number">001</div>
-      <h2>兒童(0-12歲)</h2>
+      <div class="number">search</div>
+      <h2>填寫查詢資料</h2>
       
-    </div>
-  </div>
-
-
-
-  <div class="container">
-    <h1>病歷數據分析</h1>
-
-    <div class="input-container">
-      
-      <form id="search-form" method="POST" action="">
+      <form id="wf-form-icd-from" method="POST" action="">
         <label for="gender-select">性別:</label>
-        <select name="gender" id="gender-select">
+        <select name="gender" id="gender-select" class="w-select" >
           <option value="M">男性</option>
           <option value="F">女性</option>
           <option value="ALL">不分性別</option>
         </select>
         <label for="age-select">年齡層:</label>
-        <select name="age" id="age-select">
+        <select name="age" id="age-select" class="w-select">
           <option value="0-12">兒童(0-12歲)</option>
           <option value="13-18">青年(13-24歲)</option>
           <option value="19-30">壯年(25-44歲)</option>
@@ -85,11 +75,16 @@
           <option value="0-100">不分年齡</option>
         </select>
 
-        <input type="submit" name="submit" value="查詢">
+        <input type="submit" name="submit" value="查詢" class="w-button">
       </form>
+      
+      
     </div>
+  </div>
 
 
+
+  <div class="container">
     <div class="result-container">
       <?php
       if (isset($_POST['submit'])) {
