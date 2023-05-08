@@ -15,7 +15,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script
     type="text/javascript">WebFont.load({ google: { families: ["Vollkorn:400,400italic,700,700italic", "Roboto Condensed:300,regular,700", "Roboto:300,regular,500"] } });</script>
-  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script
     type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -30,7 +29,7 @@
     <div class="w-container">
       <a href="index.html" class="brand w-clearfix w-nav-brand"><img src="images/logo.png" width="30" alt=""
           class="stone-logo">
-        <div class="logo-text">第2組</div>
+        <div class="logo-text">共病性查詢平台</div>
       </a>
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="index.html" class="nav-link w-nav-link">首頁</a>
@@ -39,9 +38,7 @@
         <a href="icdName.php" class="nav-link w-nav-link">ICD對照查詢</a>
         <a href="dataChart.php" aria-current="page" class="nav-link w-nav-link  w--current">疾病趨勢圖</a>
         <a href="contact.html" class="nav-link w-nav-link">關於我們</a>
-        <a href="" aria-current="page"
-          class="nav-link social-icons w-hidden-medium w-hidden-small w-hidden-tiny w-inline-block w-nav-link"><img
-            src="images/icons8-privacy-64-1.png" width="25" alt=""></a>
+        <!-- <a href="" aria-current="page" class="nav-link social-icons w-hidden-medium w-hidden-small w-hidden-tiny w-inline-block w-nav-link"><img src="images/icons8-privacy-64-1.png" width="25" alt=""></a> -->
       </nav>
 
       <div class="menu-button w-nav-button">
@@ -233,11 +230,11 @@
         <!-- 顯示圖表的區域 -->
         <div style="width: 100%; overflow: hidden;">
           <div style="width: 50%; float: left; text-align: center;">
-            <h3>前10大共病性</h3>
+            <h3>前10大易罹患之疾病</h3>
             <canvas id="icd-chart" style="width: 100%; height: 300px;"></canvas>
           </div>
           <div style="width: 50%; float: left; text-align: center;">
-            <h3>ICD10類別比例</h3>
+            <h3>疾病類別比例圖</h3>
             <canvas id="class-chart" style="width: 100%; height: 300px;"></canvas>
           </div>
         </div>

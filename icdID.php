@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>共病性查詢</title>
+  <title>ICD共病性查詢</title>
   <meta
     content="Stone Template is an awesome dark and beige muted theme for an agency or any other professional service."
     name="description">
@@ -28,7 +28,7 @@
     <div class="w-container">
       <a href="index.html" class="brand w-clearfix w-nav-brand"><img src="images/logo.png" width="30" alt=""
           class="stone-logo">
-        <div class="logo-text">第二組</div>
+        <div class="logo-text">共病性查詢平台</div>
       </a>
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="index.html" aria-current="page" class="nav-link w-nav-link  w--current">首頁</a>
@@ -37,9 +37,7 @@
         <a href="icdName.php" class="nav-link w-nav-link">ICD對照查詢</a>
         <a href="dataChart.php" class="nav-link w-nav-link ">疾病趨勢圖</a>
         <a href="contact.html" class="nav-link w-nav-link">關於我們</a>
-        <a href="" aria-current="page"
-          class="nav-link social-icons w-hidden-medium w-hidden-small w-hidden-tiny w-inline-block w-nav-link"><img
-            src="images/icons8-privacy-64-1.png" width="25" alt=""></a>
+        <!-- <a href="" aria-current="page" class="nav-link social-icons w-hidden-medium w-hidden-small w-hidden-tiny w-inline-block w-nav-link"><img src="images/icons8-privacy-64-1.png" width="25" alt=""></a> -->
       </nav>
 
       <div class="menu-button w-nav-button">
