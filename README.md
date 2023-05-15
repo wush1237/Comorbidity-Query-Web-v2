@@ -1,7 +1,8 @@
 # 共病性平台操作說明
 
 ## 資料庫準備
-在檔案中找到以下文件並下載
+在檔案中找到名稱為"資料"的資料夾。
+並下載
 1. data2014.csv (2014最初資料)-資料太大無法上傳
 2. ICD10_rr.csv (rr值關聯表)
 3. icd_dict.csv (icd9與icd10字典，包含名稱)
@@ -21,9 +22,17 @@
 
 ## 網站執行
 請將以下檔案移動至可執行程式，此範例應用Xampp執行。
-index.html
-icdCode.php
-icdName.php
-dataChart.php
-contact.html
-style.css
+1. index.html(首頁)
+2. icdID.php(病歷號查詢)
+3. icdCode.php(共病性指數)
+4. icdName.php(icd對照查詢)
+5. dataChart.php(疾病趨勢圖)
+6. contact.html(聯絡我們)
+7. style.css
+8. css資料夾
+9. images資料夾
+10. img資料夾
+11. js資料夾
+
+開啟Xampp，按下"start"。即可開啟網頁
+<img width="960" alt="image" src="https://github.com/wush1237/Comorbidity-Query-Web-v2/assets/75302187/e63689b6-ae40-42f4-bfe8-5e28040c5151">
