@@ -2,10 +2,10 @@
 
 ## 資料庫準備
 在檔案中找到以下文件並下載
-data2014.csv (2014最初資料)-資料太大無法上傳
-ICD10_rr.csv (rr值關聯表)
-icd_dict.csv (icd9與icd10字典，包含名稱)
-patient.csv (使用身分證字號查詢_測試人員)
+1. data2014.csv (2014最初資料)-資料太大無法上傳
+2. ICD10_rr.csv (rr值關聯表)
+3. icd_dict.csv (icd9與icd10字典，包含名稱)
+4. patient.csv (使用身分證字號查詢_測試人員)
 
 ## 資料庫匯入
 資料庫名稱可自行設定，此程式碼預設為"icd_web"
