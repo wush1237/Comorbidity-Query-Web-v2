@@ -1,94 +1,94 @@
 ICD9code,ICD10code,ICDname
-1, A00,Cholera
-2, A01,Typhoid and paratyphoid fevers
-3, A02,Other salmonella infections
-4, A03,Shigellosis
-5, A05,Other food poisoning (bacterial)
-6, A06,Amebiasis
-7, A07,Other protozoal intestinal diseases
-8, A04,Intestinal infections due to other organisms
-9, A09,Ill-defined intestinal infections
-10, A15,Primary tuberculous infection
-11, A15,Pulmonary tuberculosis
-12, A15,Other respiratory tuberculosis
-13, A17,Tuberculosis of meninges and central nervous system
-14, A18,"Tuberculosis of intestines, peritoneum, and mesenteric glands"
-15, A18,Tuberculosis of bones and joints
-16, A18,Tuberculosis of genitourinary system
-17, A18,Tuberculosis of other organs
-18, A19,Miliary tuberculosis
-20, A20,Plague
-21, A21,Tularemia
-22, A22,Anthrax
-23, A23,Brucellosis
-24, A24,Glanders
-25, A24,Melioidosis
-26, A25,Rat-bite fever
-27, A32,Other zoonotic bacterial diseases
-30, A30,Leprosy
-31, A31,Diseases due to other mycobacteria
-32, A36,Diphtheria
-33, A37,Whooping cough
-34, J02,Streptococcal sore throat and scarlet fever
-35, A46,Erysipelas
-36, A39,Meningococcal infection
-37, A35,Tetanus
-38, A40,Septicemia
-39, L08,Actinomycotic infections
-40, A48,Other bacterial diseases
-41, B95,Bacterial infection in conditions classified elsewhere and of unspecified site
-42,B20,Human immunodeficiency virus嚗IV嚗nfection disease
-45, A80,Acute poliomyelitis
-46, A81,Slow virus infection of central nervous system
-47, A87,Meningitis due to enterovirus
-48, A88,Other enterovirus diseases of central nervous system
-49, A87,Other non-arthropod-borne viral diseases of central nervous system
-50, B03,Smallpox
-51, B08,Cowpox and paravaccinia
-52, B01,Chickenpox
-53, B02,Herpes zoster
-54, B00,Herpes simplex
-55, B05,Measles
-56, B06,Rubella
-57, B08,Other viral exanthemata
-58, B08,Other human herpesvirus
-59, B08,Other poxvirus infections
-60, A95,Yellow fever
-61, A90,Dengue
-62, A83,Mosquito-borne viral encephalitis
-63, A84,Tick-borne viral encephalitis
-64, A85,Viral encephalitis transmitted by other and unspecified arthropods
-65, A98,Arthropod-borne hemorrhagic fever
-66, A93,Other arthropod-borne viral diseases
-70, B15,Viral hepatitis
-71, A82,Rabies
-72, B26,Mumps
-73, A70,Ornithosis
-74, B08,Specific diseases due to Coxsackie virus
-75, B27,Infectious mononucleosis
-76, A71,Trachoma
-77, A74,Other diseases of conjunctiva due to viruses and Chlamydiae
-78, B08,Other diseases due to viruses and Chlamydiae
-79, B97,Viral infection in conditions classified elsewhere and of unspecified site
-80, A75,Louse-borne [epidemic] typhus
-81, A75,Other typhus
-82, A77,Tick-borne rickettsioses
-83, A78,Other rickettsioses
-84, B50,Malaria
-85, B55,Leishmaniasis
-86, B57,Trypanosomiasis
-87, A68,Relapsing fever
-88, A44,Other arthropod-borne diseases
-90, A50,Congenital syphilis
-91, A51,"Early syphilis, symptomatic"
-92, A51,"Early syphilis, latent"
-93, A52,Cardiovascular syphilis
-94, A52,Neurosyphilis
-95, A52,"Other forms of late syphilis, with symptoms"
-96, A52,"Late syphilis, latent"
-97, A52,Other and unspecified syphilis
-98, A54,Gonococcal infections
-99, A57,Other venereal diseases
+001, A00,Cholera
+002, A01,Typhoid and paratyphoid fevers
+003, A02,Other salmonella infections
+004, A03,Shigellosis
+005, A05,Other food poisoning (bacterial)
+006, A06,Amebiasis
+007, A07,Other protozoal intestinal diseases
+008, A04,Intestinal infections due to other organisms
+009, A09,Ill-defined intestinal infections
+010, A15,Primary tuberculous infection
+011, A15,Pulmonary tuberculosis
+012, A15,Other respiratory tuberculosis
+013, A17,Tuberculosis of meninges and central nervous system
+014, A18,"Tuberculosis of intestines, peritoneum, and mesenteric glands"
+015, A18,Tuberculosis of bones and joints
+016, A18,Tuberculosis of genitourinary system
+017, A18,Tuberculosis of other organs
+018, A19,Miliary tuberculosis
+020, A20,Plague
+021, A21,Tularemia
+022, A22,Anthrax
+023, A23,Brucellosis
+024, A24,Glanders
+025, A24,Melioidosis
+026, A25,Rat-bite fever
+027, A32,Other zoonotic bacterial diseases
+030, A30,Leprosy
+031, A31,Diseases due to other mycobacteria
+032, A36,Diphtheria
+033, A37,Whooping cough
+034, J02,Streptococcal sore throat and scarlet fever
+035, A46,Erysipelas
+036, A39,Meningococcal infection
+037, A35,Tetanus
+038, A40,Septicemia
+039, L08,Actinomycotic infections
+040, A48,Other bacterial diseases
+041, B95,Bacterial infection in conditions classified elsewhere and of unspecified site
+042,B20,Human immunodeficiency virus嚗IV嚗nfection disease
+045, A80,Acute poliomyelitis
+046, A81,Slow virus infection of central nervous system
+047, A87,Meningitis due to enterovirus
+048, A88,Other enterovirus diseases of central nervous system
+049, A87,Other non-arthropod-borne viral diseases of central nervous system
+050, B03,Smallpox
+051, B08,Cowpox and paravaccinia
+052, B01,Chickenpox
+053, B02,Herpes zoster
+054, B00,Herpes simplex
+055, B05,Measles
+056, B06,Rubella
+057, B08,Other viral exanthemata
+058, B08,Other human herpesvirus
+059, B08,Other poxvirus infections
+060, A95,Yellow fever
+061, A90,Dengue
+062, A83,Mosquito-borne viral encephalitis
+063, A84,Tick-borne viral encephalitis
+064, A85,Viral encephalitis transmitted by other and unspecified arthropods
+065, A98,Arthropod-borne hemorrhagic fever
+066, A93,Other arthropod-borne viral diseases
+070, B15,Viral hepatitis
+071, A82,Rabies
+072, B26,Mumps
+073, A70,Ornithosis
+074, B08,Specific diseases due to Coxsackie virus
+075, B27,Infectious mononucleosis
+076, A71,Trachoma
+077, A74,Other diseases of conjunctiva due to viruses and Chlamydiae
+078, B08,Other diseases due to viruses and Chlamydiae
+079, B97,Viral infection in conditions classified elsewhere and of unspecified site
+080, A75,Louse-borne [epidemic] typhus
+081, A75,Other typhus
+082, A77,Tick-borne rickettsioses
+083, A78,Other rickettsioses
+084, B50,Malaria
+085, B55,Leishmaniasis
+086, B57,Trypanosomiasis
+087, A68,Relapsing fever
+088, A44,Other arthropod-borne diseases
+090, A50,Congenital syphilis
+091, A51,"Early syphilis, symptomatic"
+092, A51,"Early syphilis, latent"
+093, A52,Cardiovascular syphilis
+094, A52,Neurosyphilis
+095, A52,"Other forms of late syphilis, with symptoms"
+096, A52,"Late syphilis, latent"
+097, A52,Other and unspecified syphilis
+098, A54,Gonococcal infections
+099, A57,Other venereal diseases
 100, A27,Leptospirosis
 101, A69,Vincent's angina
 102, A66,Yaws
