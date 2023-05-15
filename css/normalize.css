@@ -1,0 +1,318 @@
+/* font-family: sans-serif; 將所有 HTML 元素的字體設定為 sans-serif 字體族，這是一種無襯線字體。
+-ms-text-size-adjust: 100%; 設置 IE 瀏覽器的文字內容大小調整為 100%。
+-webkit-text-size-adjust: 100%; 設置 WebKit 核心瀏覽器的文字內容大小調整為 100%。
+文字內容大小調整是指瀏覽器在縮放頁面時是否自動調整文字內容大小。這些屬性的作用是確保 HTML 頁面在不同瀏覽器上顯示時，
+文字內容大小調整的設定都一致，以達到更加統一的視覺效果。 */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 不會有任何預設的外邊距。消除不同瀏覽器之間的默認差異，確保網頁在各種瀏覽器中顯示一致。 */
+body {
+  margin: 0;
+}
+
+/* 將指定的HTML元素轉換為區塊元素（block-level element），使其在頁面上呈現為獨佔一行或多行的元素。
+通過將這些HTML元素指定為塊級元素，可以控制它們在頁面上的佈局和樣式。
+例如，可以為這些元素設置寬度、高度、邊距和背景等屬性，以便更好地控制它們在頁面上的位置和外觀。 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* 將audio、canvas、progress和video這些HTML元素的顯示屬性設置為inline-block，
+同時將它們與基準線（baseline）對齊，使它們在文字內容中的佈局更加靈活和自然。
+inline-block設置使得這些元素佔據一定的空間，但是又能與其他文字內容內容並排，這樣可以更好地控制元素的大小和位置。 */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* 當 audio 元素沒有 controls 屬性時，將其隱藏（display: none;），
+同時將其高度設定為 0（height: 0;），即不佔據頁面空間。 
+controls 屬性是指在音訊播放器中顯示播放控制項（如播放/暫停按鈕、進度條等）。
+因此這段代碼可以隱藏沒有播放控制項的音訊元素。 */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* 將帶有 hidden 屬性的元素和 template 標籤的元素設定為不顯示，也就是隱藏起來。
+hidden 屬性是 HTML5 中新增的一種屬性，可以用來隱藏元素。
+template 元素則是用來存放 HTML 佈景主題的標籤，不會顯示在頁面上，而是在 JavaScript 中取出並使用。 */
+[hidden],
+template {
+  display: none;
+}
+
+/* 指定了所有超連結元素的背景顏色為透明。
+也就是說，任何超連結的背景將不會被繪製，讓超連結本身看起來像是浮在背景上的文字。
+這通常是因為希望不干擾頁面的設計或顯示一些類似按鈕的超連結。 */
+a {
+  background-color: transparent;
+}
+
+/* 當連結處於被啟動（active）狀態或者滑鼠指標懸停（hover）在連結上時，移除連結的輪廓線（outline），
+以達到美觀的效果。一些瀏覽器會在連結上添加預設的輪廓線，這個程式碼段可以移除這個預設的輪廓線。 */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* 當 <abbr> 標籤擁有 title 屬性時的下底線樣式。
+<abbr> 標籤代表一個縮寫，title 屬性用來指定該縮寫的完整詞彙或解釋。
+在這個樣式中，border-bottom 屬性被設定為一條 1 像素的點狀底線，用以提示該縮寫擁有解釋或完整詞彙。 */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* 當 HTML 文件中使用 <b> 或 <strong> 標籤時，它們的字體將變為粗體，
+即 font-weight 屬性設定為 bold。這可以讓這些標籤中的文字更加突出和強調。 */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* 當 HTML 中的元素標籤為 dfn 時，會將其文字設置為斜體字。dfn 標籤通常用於標記定義，
+例如將某個單詞的定義標記為 dfn，可以讓瀏覽器對這個單詞進行更好的語意理解。 */
+dfn {
+  font-style: italic;
+}
+
+/* font-size: 2em;：設定字體大小為預設字體大小的兩倍；
+margin: 0.67em 0;：設定上下邊距為默認字體大小的 0.67 倍，左右邊距為 0。 */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* 當 HTML 中有 <mark> 標籤時，將其背景色設為黃色(#ff0)，文字顏色設為黑色(#000)。
+<mark> 標籤通常用於突顯文字內容，例如重要的關鍵詞或詞語。 */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* small 元素的字體大小應該是原來大小的 80%。因此，當在 HTML 中使用 <small> 元素時，
+其內容的字體大小會比周圍的文字內容稍小一些。 */
+small {
+  font-size: 80%;
+}
+
+/* 針對下標（sub）和上標（sup）的元素設定樣式，包括以下：
+font-size: 75%：將字號設定為原來的 75%。
+line-height: 0：將行高設定為 0，以避免上下標會影響到行高。
+position: relative：設定元素為相對定位，這樣就可以使用 top 和 bottom 調整元素的位置。
+vertical-align: baseline：設置元素的垂直對齊方式為基線對齊。
+top: -0.5em：將上標元素的位置向上調整 0.5 個字母的高度，以實現上標的效果。
+bottom: -0.25em：將下標元素的位置向下調整 0.25 個字母的高度，以實現下標的效果。 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/* 當<img>元素在HTML文件中被渲染時，其邊框樣式應為0，即沒有邊框。 */
+img {
+  border: 0;
+}
+
+/* 如果一個 SVG 元素的大小超出了它所在的父元素，則超出的部分應該被裁剪掉，不顯示在頁面上。
+這個規則可以保證 SVG 元素在頁面中的顯示效果正常，並且不會影響到其他元素的佈局。 */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* 表示對於 <figure> 元素，設定其外邊距上下為 1em，左右為 40px。
+<figure> 元素通常用於包含一段與主文本相關的圖表、照片、代碼段等內容。
+這段 CSS 可以讓這些元素在排版時與主文本產生一定的間距，使得頁面看起來更加美觀。 */
+figure {
+  margin: 1em 40px;
+}
+
+/* hr 是 HTML 中的水準分隔線元素，這個 CSS 規則為水準分隔線設定樣式。其中：
+box-sizing: content-box; 表示將 hr 的 width 和 height 屬性計算為內容區域的大小（不包括邊框和內邊距）。
+height: 0; 將 hr 的高度設定為0，意味著水平分隔線的高度由邊框（或者是 border-width）決定。
+這樣設定的好處是可以讓水平分隔線佔用更少的空間，同時邊框仍然可以完整顯示。 */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* 表示當預格式化文字內容的寬度超過其容器的寬度時，為了防止預格式化文字內容被裁剪，將添加水平捲軸。
+具體來說，overflow: auto 表示當內容超出容器尺寸時，瀏覽器會自動為元素添加捲軸。 */
+pre {
+  overflow: auto;
+}
+
+/* 將 monospace 字體應用於 <code>、<kbd>、<pre> 和 <samp> 元素，
+它們是通常用於顯示程式碼和計算機輸入的元素。此外，它還將字體大小設置為 1em，
+因此它們的大小與其父元素的字體大小相同。 */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+
+ /* 它設置了這些表單元素的字體顏色和字體大小都繼承自它們的父元素，以及設置它們的邊距為0。
+ 這樣做的效果是讓表單元素看起來更加一致，符合整個網頁的設計風格。 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* 它設置了按鈕元素的溢位（overflow）屬性為可見（visible）。這意味著，
+如果按鈕內部的內容超出了按鈕的大小，那麼超出的部分將會顯示出來，而不是被隱藏掉。 */
+button {
+  overflow: visible;
+}
+
+/* 按鈕（button）和選擇器（select）的文字內容不會被強制轉換為大寫或小寫字母。 */
+button,
+select {
+  text-transform: none;
+}
+
+/* -webkit-appearance: button;：指定在 WebKit 瀏覽器中渲染按鈕時應該採用的樣式，此處設定為使用系統預設按鈕樣式。
+cursor: pointer;：將游標樣式設定為手型，表示這是一個可點擊的按鈕。
+html input[type="button"], input[type="reset"]：選擇所有 type 屬性值為 button 和 reset 的 input 元素，並設置其在瀏覽器中顯示為按鈕樣式。
+這些樣式規則的作用是為了提高按鈕的易用性和一致性，使其在各種瀏覽器和作業系統下都有類似的樣式和互動行為。 */
+button,
+html input[type="button"],
+input[type="reset"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* 設置當按鈕或輸入框處於禁用狀態時，將滑鼠游標的樣式設置為預設狀態，即不可點擊狀態。 */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* 針對Firefox瀏覽器的特定樣式設置，用於去除button和input元素的內部焦點框（focus ring）的默認樣式。
+其中，border: 0;用於移除內部焦點框的邊框，padding: 0;用於移除內部焦點框的內邊距。 */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* 設定了所有 input 元素的行高（line-height）為正常值。
+正常值是指該元素的字體大小（font-size）乘以該元素的字體高度（font metrics）的比例，
+這樣可以讓元素的文字內容內容正確地垂直居中對齊。如果行高設置得太大或太小，文字內容內容可能會因此不居中對齊。 */
+input {
+  line-height: normal;
+}
+
+/* 針對複選框和單選框(input元素)進行樣式設定。box-sizing屬性設定為border-box，
+表示元素的寬度和高度不包括內邊距(padding)和邊框(border)的尺寸。
+padding屬性設定為0，表示內邊距設置為0。
+這樣設置可以保證複選框和單選框的尺寸在各個瀏覽器中一致，不受內邊距和邊框的影響。 */
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 為了改變<input>元素中的數字輸入框（<input type="number">）中的上下調整按鈕的高度，
+將其設為自適應高度（auto），以避免在某些瀏覽器上出現不必要的樣式問題。
+其中，::-webkit-inner-spin-button和::-webkit-outer-spin-button是webkit核心瀏覽器的私有偽類，
+分別代表數字輸入框中的內部和外部調整按鈕。 */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* 修改 <input> 標籤的外觀。-webkit-appearance 屬性是一個供 WebKit 核心瀏覽器使用的 CSS 屬性，
+用於設定表單元素的外觀。在這個樣式中，將 <input> 標籤的外觀設定為不使用瀏覽器的默認外觀。
+具體地說，將搜尋框的外觀設定為不使用瀏覽器默認的圓角和背景。 */
+input[type='search'] {
+  -webkit-appearance: none;
+  /* 1 */
+}
+
+/* 針對 input 元素中類型為 search 的元素，
+通過 ::webkit-search-cancel-button 和 ::webkit-search-decoration 偽元素來定製瀏覽器預設樣式，
+將其隱藏，從而實現自定義樣式的效果。
+ -webkit-appearance: none; 這一行代碼是用來取消瀏覽器的預設樣式，讓自定義的樣式生效。 */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* 定義了表單的 fieldset 元素的樣式，具體含義如下：
+border: 1px solid #c0c0c0;：設定邊框樣式為 1 像素寬、顏色為 #c0c0c0 的實線邊框；
+margin: 0 2px;：設置上下外邊距為 0，左右外邊距為 2 像素；
+padding: 0.35em 0.625em 0.75em;：設定內邊距，分別為頂部 0.35em、左右 0.625em、底部 0.75em。 */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* 設置legend元素的樣式，其中：
+border: 0表示不設置邊框。
+padding: 0表示不設置內邊距。 */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* 設置了文字內容區域（textarea）的溢位行為為自動溢位，並在需要時顯示捲軸。
+如果文字內容的高度大於文字內容區域的高度，則文字內容區域將自動添加垂直捲軸，
+使用者可以滾動文字內容。如果文字內容的寬度大於文字內容區域的寬度，
+則文字內容區域將自動添加水平捲軸，使用者可以橫向滾動文字內容。這確保了使用者可以查看和編輯大量文字內容。 */
+textarea {
+  overflow: auto;
+}
+
+/* optgroup 標籤表示選項組。在 CSS 中， optgroup 標籤的 font-weight 屬性設定為 bold 表示選項組名稱的字體加粗。 */
+optgroup {
+  font-weight: bold;
+}
+
+/* 定義表格樣式：
+border-collapse: collapse 定義表格邊框摺疊，將相鄰的單元格邊框合併成一個單一邊框，讓表格看起來更緊湊。
+border-spacing: 0 定義相鄰單元格之間的間距為 0，去掉單元格之間的間隔。
+td, th { padding: 0 } 定義單元格的內邊距為 0，去掉單元格的默認內邊距。 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
