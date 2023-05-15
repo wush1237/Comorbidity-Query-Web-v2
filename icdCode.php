@@ -67,7 +67,7 @@
               <label for="icd2">輸入ICD編碼2：</label>
               <input type="text" class="w-input" maxlength="256" name="icd2">
               <label for="rows">顯示行數：</label>
-              <select name="rows" id="rows">
+              <select name="rows" id="rows" class="w-select">
                 <option value="3">3筆</option>
                 <option value="4">4筆</option>
                 <option value="5">5筆</option>
@@ -97,7 +97,7 @@
               $rows = $_POST['rows'];
 
               // 資料庫連線
-              $conn = mysqli_connect("localhost", "root", "12345678", "icd_test");
+              $conn = mysqli_connect("localhost", "root", "12345678", "icd_web");
               if (!$conn) {
                 die("連線失敗: " . mysqli_connect_error());
               }
@@ -115,7 +115,7 @@
                   while ($row = $result->fetch_assoc()) {
                     $icd = $row["ICD1"];
                     $rr = $row["RR"];
-                    $icd_name = mysqli_query($conn, "SELECT ICDname FROM icd9toicd10 WHERE ICD10code = '$icd'");
+                    $icd_name = mysqli_query($conn, "SELECT ICDname FROM icd_dict WHERE ICD10code = '$icd'");
                     $name = "";
                     if (mysqli_num_rows($icd_name) > 0) {
                       $row_name = mysqli_fetch_assoc($icd_name);
@@ -146,8 +146,8 @@
                 $icd1 = $row["ICD1"];
                 $icd2 = $row["ICD2"];
                 $rr = $row["RR"];
-                $icd_name1 = mysqli_query($conn, "SELECT ICDname FROM icd9toicd10 WHERE ICD10code = '$icd1'");
-                $icd_name2 = mysqli_query($conn, "SELECT ICDname FROM icd9toicd10 WHERE ICD10code = '$icd2'");
+                $icd_name1 = mysqli_query($conn, "SELECT ICDname FROM icd_dict WHERE ICD10code = '$icd1'");
+                $icd_name2 = mysqli_query($conn, "SELECT ICDname FROM icd_dict WHERE ICD10code = '$icd2'");
                 $name1 = "";
                 $name2 = "";
                 if (mysqli_num_rows($icd_name1) > 0) {
@@ -191,7 +191,7 @@
           <a href="contact.html" class="button beige footer">網站資訊與我們的聯絡</a>
         </div>
         <div class="w-col w-col-4">
-          <div class="footer-text address">2022.12</div>
+          <div class="footer-text address">2023.06</div>
         </div>
       </div>
     </div>

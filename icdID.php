@@ -79,7 +79,7 @@
 
           <div class="w-form">
             <form id="wf-form-icd-from" name="myForm" data-name="icd from" method="POST" action=" "
-              onsubmit="return validateForm()"><label for="id">身分證字號</label>
+              onsubmit="return validateForm()"><label for="id">病例號查詢</label>
               <input type="text" class="w-input" maxlength="256" name="id" data-name="id" placeholder="" id="id">
 
               </select>
@@ -94,13 +94,13 @@
               $id = $_POST['id'];
 
               // 資料庫連線
-              $conn = mysqli_connect("localhost", "root", "12345678", "icd_test");
+              $conn = mysqli_connect("localhost", "root", "12345678", "icd_web");
               if (!$conn) {
                 die("連線失敗: " . mysqli_connect_error());
               }
 
               // 查詢該患者已被診斷的ICD編碼
-              $sql_existing = "SELECT ICD FROM tester WHERE CHARTID = '$id'";
+              $sql_existing = "SELECT ICD FROM patient WHERE CHARTID = '$id'";
               $result_existing = mysqli_query($conn, $sql_existing);
               echo "身分證字號 $id 患者<br>";
 
@@ -110,7 +110,7 @@
                 echo "<ul>";
                 while ($row_existing = mysqli_fetch_assoc($result_existing)) {
                   $icd_existing = $row_existing["ICD"];
-                  $icd_existing_name = mysqli_query($conn, "SELECT ICDname FROM icd9toicd10 WHERE TRIM(ICD10code) = '$icd_existing'");
+                  $icd_existing_name = mysqli_query($conn, "SELECT ICDname FROM icd_dict WHERE TRIM(ICD10code) = '$icd_existing'");
                   $icd_name = "";
                   if (mysqli_num_rows($icd_existing_name) > 0) {
                     $row_icd_name = mysqli_fetch_assoc($icd_existing_name);
@@ -136,13 +136,13 @@
               $id = $_POST['id'];
 
               // 資料庫連線
-              $conn = mysqli_connect("localhost", "root", "12345678", "icd_test");
+              $conn = mysqli_connect("localhost", "root", "12345678", "icd_web");
               if (!$conn) {
                 die("連線失敗: " . mysqli_connect_error());
               }
 
               // 在表格tester搜尋相同身分證字號的ICD編碼
-              $sql = "SELECT * FROM tester WHERE CHARTID = '$id'";
+              $sql = "SELECT * FROM patient WHERE CHARTID = '$id'";
               $result = mysqli_query($conn, $sql);
 
               if (mysqli_num_rows($result) > 0) {
@@ -179,7 +179,7 @@
                   arsort($icd_codes); // 將陣列按照 $rr 值由大到小排序
                   echo "<ul>";
                   foreach ($icd_codes as $icd => $rr) {
-                    $icd_name = mysqli_query($conn, "SELECT ICDname FROM icd9toicd10 WHERE ICD10code = '$icd'");
+                    $icd_name = mysqli_query($conn, "SELECT ICDname FROM icd_dict WHERE ICD10code = '$icd'");
                     $name = "";
                     if (mysqli_num_rows($icd_name) > 0) {
                       $row_name = mysqli_fetch_assoc($icd_name);
@@ -223,7 +223,7 @@
           <a href="contact.html" class="button beige footer">網站資訊與我們的聯絡</a>
         </div>
         <div class="w-col w-col-4">
-          <div class="footer-text address">2022.12</div>
+          <div class="footer-text address">2023.06</div>
         </div>
       </div>
     </div>

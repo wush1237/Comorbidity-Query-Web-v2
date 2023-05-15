@@ -92,7 +92,7 @@
             $age = $_POST['age'];
 
             // 資料庫連線
-            $conn = mysqli_connect("localhost", "root", "12345678", "icd_test");
+            $conn = mysqli_connect("localhost", "root", "12345678", "icd_web");
             if (!$conn) {
               die("連線失敗: " . mysqli_connect_error());
             }
@@ -120,57 +120,57 @@
 
             // 構造 SQL 語句
             if ($gender == 'ALL') {
-              $sql_icd_count = "SELECT ICD10, COUNT(*) AS count FROM data103 WHERE $age_condition GROUP BY ICD10 ORDER BY count DESC LIMIT 10";
+              $sql_icd_count = "SELECT ICD, COUNT(*) AS count FROM data103 WHERE $age_condition GROUP BY ICD ORDER BY count DESC LIMIT 10";
               $sql_class_count = "SELECT CASE
-          WHEN TRIM(ICD10) BETWEEN 'A00' AND 'B99' THEN '某些传染病和寄生虫病' 
-          WHEN TRIM(ICD10) BETWEEN 'C00' AND 'D48' THEN '肿瘤' 
-          WHEN TRIM(ICD10) BETWEEN 'D50' AND 'D89' THEN '血液及造血器官疾病和某些涉及免疫机制的疾患' 
-          WHEN TRIM(ICD10) BETWEEN 'E00' AND 'E90' THEN '内分泌、营养和代谢疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'F00' AND 'F99' THEN '精神和行为障碍' 
-          WHEN TRIM(ICD10) BETWEEN 'G00' AND 'G99' THEN '神经系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'H00' AND 'H59' THEN '眼和附器疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'H60' AND 'H95' THEN '耳和乳突疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'I00' AND 'I99' THEN '循环系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'J00' AND 'J99' THEN '呼吸系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'K00' AND 'K93' THEN '消化系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'L00' AND 'L99' THEN '皮肤和皮下组织疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'M00' AND 'M99' THEN '肌肉骨骼系统和结缔组织疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'N00' AND 'N99' THEN '泌尿生殖系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'O00' AND 'O99' THEN '妊娠、分娩和产褥期' 
-          WHEN TRIM(ICD10) BETWEEN 'P00' AND 'P96' THEN '起源于围生期的某些情况' 
-          WHEN TRIM(ICD10) BETWEEN 'Q00' AND 'Q99' THEN '先天畸形、变形和染色体异常'
-          WHEN TRIM(ICD10) BETWEEN 'R00' AND 'R99' THEN '症狀、體徵和臨床與實驗室異常所見，不可歸類在他處者' 
-          WHEN TRIM(ICD10) BETWEEN 'S00' AND 'T98' THEN '損傷、中毒和外因的某些其他後果' 
-          WHEN TRIM(ICD10) BETWEEN 'V01' AND 'Y98' THEN '疾病和死亡的外因' 
-          WHEN TRIM(ICD10) BETWEEN 'Z00' AND 'Z99' THEN '影響健康狀態和與保健機構接觸的因素'  
+          WHEN TRIM(ICD) BETWEEN 'A00' AND 'B99' THEN '某些传染病和寄生虫病' 
+          WHEN TRIM(ICD) BETWEEN 'C00' AND 'D48' THEN '肿瘤' 
+          WHEN TRIM(ICD) BETWEEN 'D50' AND 'D89' THEN '血液及造血器官疾病和某些涉及免疫机制的疾患' 
+          WHEN TRIM(ICD) BETWEEN 'E00' AND 'E90' THEN '内分泌、营养和代谢疾病' 
+          WHEN TRIM(ICD) BETWEEN 'F00' AND 'F99' THEN '精神和行为障碍' 
+          WHEN TRIM(ICD) BETWEEN 'G00' AND 'G99' THEN '神经系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'H00' AND 'H59' THEN '眼和附器疾病' 
+          WHEN TRIM(ICD) BETWEEN 'H60' AND 'H95' THEN '耳和乳突疾病' 
+          WHEN TRIM(ICD) BETWEEN 'I00' AND 'I99' THEN '循环系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'J00' AND 'J99' THEN '呼吸系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'K00' AND 'K93' THEN '消化系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'L00' AND 'L99' THEN '皮肤和皮下组织疾病' 
+          WHEN TRIM(ICD) BETWEEN 'M00' AND 'M99' THEN '肌肉骨骼系统和结缔组织疾病' 
+          WHEN TRIM(ICD) BETWEEN 'N00' AND 'N99' THEN '泌尿生殖系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'O00' AND 'O99' THEN '妊娠、分娩和产褥期' 
+          WHEN TRIM(ICD) BETWEEN 'P00' AND 'P96' THEN '起源于围生期的某些情况' 
+          WHEN TRIM(ICD) BETWEEN 'Q00' AND 'Q99' THEN '先天畸形、变形和染色体异常'
+          WHEN TRIM(ICD) BETWEEN 'R00' AND 'R99' THEN '症狀、體徵和臨床與實驗室異常所見，不可歸類在他處者' 
+          WHEN TRIM(ICD) BETWEEN 'S00' AND 'T98' THEN '損傷、中毒和外因的某些其他後果' 
+          WHEN TRIM(ICD) BETWEEN 'V01' AND 'Y98' THEN '疾病和死亡的外因' 
+          WHEN TRIM(ICD) BETWEEN 'Z00' AND 'Z99' THEN '影響健康狀態和與保健機構接觸的因素'  
           ELSE '其他' 
             END AS icd_category, COUNT(*) AS count FROM data103 WHERE SEX='F' AND AGE BETWEEN 0 AND 12 GROUP BY icd_category ORDER BY count DESC";
 
             } else {
-              $sql_icd_count = "SELECT ICD10, COUNT(*) AS count FROM data103 WHERE SEX='$gender' AND $age_condition GROUP BY ICD10 ORDER BY count DESC LIMIT 10";
+              $sql_icd_count = "SELECT ICD, COUNT(*) AS count FROM data103 WHERE SEX='$gender' AND $age_condition GROUP BY ICD ORDER BY count DESC LIMIT 10";
               $sql_class_count = "SELECT CASE
-          WHEN TRIM(ICD10) BETWEEN 'A00' AND 'B99' THEN '某些传染病和寄生虫病' 
-          WHEN TRIM(ICD10) BETWEEN 'C00' AND 'D48' THEN '肿瘤' 
-          WHEN TRIM(ICD10) BETWEEN 'D50' AND 'D89' THEN '血液及造血器官疾病和某些涉及免疫机制的疾患' 
-          WHEN TRIM(ICD10) BETWEEN 'E00' AND 'E90' THEN '内分泌、营养和代谢疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'F00' AND 'F99' THEN '精神和行为障碍' 
-          WHEN TRIM(ICD10) BETWEEN 'G00' AND 'G99' THEN '神经系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'H00' AND 'H59' THEN '眼和附器疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'H60' AND 'H95' THEN '耳和乳突疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'I00' AND 'I99' THEN '循环系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'J00' AND 'J99' THEN '呼吸系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'K00' AND 'K93' THEN '消化系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'L00' AND 'L99' THEN '皮肤和皮下组织疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'M00' AND 'M99' THEN '肌肉骨骼系统和结缔组织疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'N00' AND 'N99' THEN '泌尿生殖系统疾病' 
-          WHEN TRIM(ICD10) BETWEEN 'O00' AND 'O99' THEN '妊娠、分娩和产褥期' 
-          WHEN TRIM(ICD10) BETWEEN 'P00' AND 'P96' THEN '起源于围生期的某些情况' 
-          WHEN TRIM(ICD10) BETWEEN 'Q00' AND 'Q99' THEN '先天畸形、变形和染色体异常'
-          WHEN TRIM(ICD10) BETWEEN 'R00' AND 'R99' THEN '症狀、體徵和臨床與實驗室異常所見，不可歸類在他處者' 
-          WHEN TRIM(ICD10) BETWEEN 'S00' AND 'T98' THEN '損傷、中毒和外因的某些其他後果' 
-          WHEN TRIM(ICD10) BETWEEN 'V01' AND 'Y98' THEN '疾病和死亡的外因' 
-          WHEN TRIM(ICD10) BETWEEN 'Z00' AND 'Z99' THEN '影響健康狀態和與保健機構接觸的因素'  
-          ELSE '其他' 
+          WHEN TRIM(ICD) BETWEEN 'A00' AND 'B99' THEN '某些传染病和寄生虫病' 
+          WHEN TRIM(ICD) BETWEEN 'C00' AND 'D48' THEN '肿瘤' 
+          WHEN TRIM(ICD) BETWEEN 'D50' AND 'D89' THEN '血液及造血器官疾病和某些涉及免疫机制的疾患' 
+          WHEN TRIM(ICD) BETWEEN 'E00' AND 'E90' THEN '内分泌、营养和代谢疾病' 
+          WHEN TRIM(ICD) BETWEEN 'F00' AND 'F99' THEN '精神和行为障碍' 
+          WHEN TRIM(ICD) BETWEEN 'G00' AND 'G99' THEN '神经系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'H00' AND 'H59' THEN '眼和附器疾病' 
+          WHEN TRIM(ICD) BETWEEN 'H60' AND 'H95' THEN '耳和乳突疾病' 
+          WHEN TRIM(ICD) BETWEEN 'I00' AND 'I99' THEN '循环系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'J00' AND 'J99' THEN '呼吸系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'K00' AND 'K93' THEN '消化系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'L00' AND 'L99' THEN '皮肤和皮下组织疾病' 
+          WHEN TRIM(ICD) BETWEEN 'M00' AND 'M99' THEN '肌肉骨骼系统和结缔组织疾病' 
+          WHEN TRIM(ICD) BETWEEN 'N00' AND 'N99' THEN '泌尿生殖系统疾病' 
+          WHEN TRIM(ICD) BETWEEN 'O00' AND 'O99' THEN '妊娠、分娩和产褥期' 
+          WHEN TRIM(ICD) BETWEEN 'P00' AND 'P96' THEN '起源于围生期的某些情况' 
+          WHEN TRIM(ICD) BETWEEN 'Q00' AND 'Q99' THEN '先天畸形、变形和染色体异常'
+          WHEN TRIM(ICD) BETWEEN 'R00' AND 'R99' THEN '症狀、體徵和臨床與實驗室異常所見，不可歸類在他處者' 
+          WHEN TRIM(ICD) BETWEEN 'S00' AND 'T98' THEN '損傷、中毒和外因的某些其他後果' 
+          WHEN TRIM(ICD) BETWEEN 'V01' AND 'Y98' THEN '疾病和死亡的外因' 
+          WHEN TRIM(ICD) BETWEEN 'Z00' AND 'Z99' THEN '影響健康狀態和與保健機構接觸的因素'  
+          ELSE '其他'  
             END AS icd_category, COUNT(*) AS count FROM data103 WHERE SEX='F' AND AGE BETWEEN 0 AND 12 GROUP BY icd_category ORDER BY count DESC";
             }
             $result_icd_count = $conn->query($sql_icd_count);
@@ -182,7 +182,7 @@
             $icd_category = array();
             $category_counts = array();
             while ($row = $result_icd_count->fetch_assoc()) {
-              $icd10s[] = $row['ICD10'];
+              $icd10s[] = $row['ICD'];
               $counts[] = $row['count'];
             }
             while ($row = $result_class_count->fetch_assoc()) {
@@ -329,7 +329,7 @@
           <a href="contact.html" class="button beige footer">網站資訊與我們的聯絡</a>
         </div>
         <div class="w-col w-col-4">
-          <div class="footer-text address">2022.12</div>
+          <div class="footer-text address">2023.06</div>
         </div>
       </div>
     </div>

@@ -76,7 +76,7 @@
           <div class="existing-icd-container">
             <?php
             // 資料庫連線
-            $conn = mysqli_connect("localhost", "root", "12345678", "icd_test");
+            $conn = mysqli_connect("localhost", "root", "12345678", "icd_web");
             if (!$conn) {
               die("連線失敗: " . mysqli_connect_error());
             }
@@ -105,12 +105,12 @@
 
               // 建立SQL查詢語句
               if (!empty($icd9)) {
-                $sql = "SELECT * FROM icd9toicd10 WHERE ICD9code='$icd9'";
+                $sql = "SELECT * FROM icd_dict WHERE ICD9code='$icd9'";
               } else
                 if (!empty($icd10)) {
-                  $sql = "SELECT * FROM icd9toicd10 WHERE ICD10code LIKE '%$icd10%'";
+                  $sql = "SELECT * FROM icd_dict WHERE ICD10code LIKE '%$icd10%'";
                 } else {
-                  $sql = "SELECT * FROM icd9toicd10 WHERE ICDname LIKE '%$keyword%'";
+                  $sql = "SELECT * FROM icd_dict WHERE ICDname LIKE '%$keyword%'";
                 }
               $result = $conn->query($sql);
 
@@ -156,7 +156,7 @@
           <a href="contact.html" class="button beige footer">網站資訊與我們的聯絡</a>
         </div>
         <div class="w-col w-col-4">
-          <div class="footer-text address">2022.12</div>
+          <div class="footer-text address">2023.06</div>
         </div>
       </div>
     </div>
