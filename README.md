@@ -16,6 +16,9 @@
 4. patient 請匯入patient.csv
 <img width="195" alt="image" src="https://github.com/wush1237/Comorbidity-Query-Web-v2/assets/75302187/f5938f70-66bd-4387-ba9a-a55675d7b313">
 
+!注意!
+因資料筆數數量過多，建議使用LOAD DATA LOCAL INFILE上傳
+
 ## 網站執行
 請將以下檔案移動至可執行程式，此範例應用Xampp執行。
 index.html
